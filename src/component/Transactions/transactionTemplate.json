@@ -1,0 +1,28 @@
+[
+    {
+        "id": "TEMP-001",
+        "title": "The transaction title is shown here",
+        "role": "Buyer",
+        "status": "Pending",
+        "progress": {
+            "agreement": "Accepted",
+            "payToExqure": "Done",
+            "shipment": "Done",
+            "inspection": "Pending",
+            "disbursement": "---"
+        }
+    },
+    {
+        "id": "TEMP-001",
+        "title": "Title2",
+        "role": "Seller",
+        "status": "Done",
+        "progress": {
+            "agreement": "Pending",
+            "payToExqure": "Pending",
+            "shipment": "Pending",
+            "inspection": "Done",
+            "disbursement": "---"
+        }
+    }
+]

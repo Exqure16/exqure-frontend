@@ -7,6 +7,7 @@ import Comingsoon from './component/Comingsoon/Comingsoon';
 
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
+import TransBuyer from './component/Transactions/MyTransaction_Buyer';
 import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
@@ -26,6 +27,7 @@ function App() {
         <Route path='exqure-frontend/forgot' element={<ForgotPassword />} />
         <Route path='exqure-frontend/reset' element={<ResetPassword />} />
         <Route path='exqure-frontend/signup' element={<Signup />} />
+        <Route path='exqure-frontend/transactions' element={<TransBuyer />} />
       </Routes>
       <Footer />
     </div>
