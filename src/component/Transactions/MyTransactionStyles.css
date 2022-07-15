@@ -110,3 +110,16 @@
     width: fit-content;
     border-radius: 5px;
 }
+
+/*.slider {
+    background-color: #ffffff;
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}*/
