@@ -26,7 +26,7 @@ export default function TransBuyer() {
     };*/
 
     const statusChecker = () => {
-        const elem = document.querySelectorAll('.status')
+        const elem = document.querySelectorAll(".status")
         for (var i=0; i<elem.length; i++) {
             if(elem[i].textContent === "Pending") {
                 elem[i].classList.add("orange")
@@ -37,17 +37,49 @@ export default function TransBuyer() {
         }
     }
 
+    const navigateRight = () => {
+        const elem = document.querySelectorAll(".key-div")
+        setCount(count+1)
+        let i = count
+        elem[i].classList.remove("show")
+        elem[i].classList.add("hide")
+        elem[i+1].classList.add("show")
+        /*elem.forEach(check())
+        const check = () => {
+            if
+        }*/
+    }
+
+    const navigateLeft = () => {
+        const elem = document.querySelectorAll(".key-div")
+        setCount(count-1)
+        let i = count
+        elem[i].classList.remove("show")
+        elem[i].classList.add("hide")
+        elem[i-1].classList.add("show")
+    }
+
+    const initializer = () => {
+        const elem = document.querySelectorAll(".key-div")
+        for (var i=0; i<elem.length; i++) {
+            elem[i].classList.add("hide")
+            elem[0].classList.add("show")
+        }
+    }
+
 
     useEffect(() => {
         //fetchData();
-        statusChecker()
+        initializer();
+        statusChecker();
     }, []);
 
+    const [count, setCount] = useState(0)
     return (
         <div className="trans-main">
             <h2>My Transactions</h2>
-            <button className="chevron"><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></button>
-            <button className="chevron"><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></button>
+            <button id="navbutton" onClick={navigateLeft} className="chevron"><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></button>
+            <button id="navbutton" onClick={navigateRight} className="chevron"><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></button>
             <div className="slider">
                 {template.map((item, i) => {
                     return (
