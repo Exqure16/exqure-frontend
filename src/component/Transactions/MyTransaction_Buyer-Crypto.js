@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import React from 'react';
 import './MyTransactionStyles.css';
 import template from './transactionTemplate.json'
+import {statusChecker, initializer} from './MyTransaction_Buyer'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,31 +10,8 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
 
 library.add(faChevronRight, faChevronLeft)
 
-export const statusChecker = () => {
-    const elem = document.querySelectorAll(".status")
-    for (var i=0; i<elem.length; i++) {
-        if(elem[i].textContent === "Pending") {
-            elem[i].classList.add("orange")
-        }
-        if(elem[i].textContent === "Accepted" || elem[i].textContent === "Done") {
-            elem[i].classList.add("green")
-        }
-    }
-}
 
-
-export const initializer = () => {
-    const elem = document.querySelectorAll(".key-div")
-    for (var i=0; i<elem.length; i++) {
-        elem[i].classList.add("hide")
-    }
-    elem[0].classList.add("show")
-}
-
-
-export default function TransBuyer() {
-    const [count, setCount] = useState(0)
-
+export default function TransBuyerCryptop() {
     /*const [data, setData] = useState([]);
 
     const fetchData = async () => {
@@ -47,27 +25,27 @@ export default function TransBuyer() {
         console.log(tempData);
         setData(tempData);
     };*/
-        const navigateRight = () => {
-            const elem = document.querySelectorAll(".key-div")
-            if (count < elem.length-1) {
-                setCount(count+1)
-                let i = count
-                elem[i].classList.remove("show")
-                elem[i].classList.add("hide")
-                elem[i+1].classList.add("show")
-            }
+    const navigateRight = () => {
+        const elem = document.querySelectorAll(".key-div")
+        if (count < elem.length-1) {
+            setCount(count+1)
+            let i = count
+            elem[i].classList.remove("show")
+            elem[i].classList.add("hide")
+            elem[i+1].classList.add("show")
         }
-        
-        const navigateLeft = () => {
-            const elem = document.querySelectorAll(".key-div")
-            if (count > 0){
-                setCount(count-1)
-                let i = count
-                elem[i].classList.remove("show")
-                elem[i].classList.add("hide")
-                elem[i-1].classList.add("show")
-            }
+    }
+
+    const navigateLeft = () => {
+        const elem = document.querySelectorAll(".key-div")
+        if (count > 0){
+            setCount(count-1)
+            let i = count
+            elem[i].classList.remove("show")
+            elem[i].classList.add("hide")
+            elem[i-1].classList.add("show")
         }
+    }
 
     useEffect(() => {
         //fetchData();
@@ -75,6 +53,7 @@ export default function TransBuyer() {
         statusChecker();
     }, []);
 
+    const [count, setCount] = useState(0)
     return (
         <div className="trans-main">
             <h2>My Transactions</h2>
@@ -91,10 +70,11 @@ export default function TransBuyer() {
 
                             <h3>Transaction Progress</h3>
                             <p>Agreement of terms & conditions:<span className="status">{item.progress.agreement}</span></p>
-                            <p>Payment to Exqure by buyer:<span className="status">{item.progress.payToExqure}</span></p>
+                            <p>Payment of coin to Exqure's crypto wallet:<span className="status">{item.progress.payToExqure}</span></p>
                             <p>Shipment of item:<span className="status">{item.progress.shipment}</span></p>
                             <p>Inspection of item:<span className="status">{item.progress.inspection}</span></p>
                             <p>Disbursing of cash:<span>{item.progress.disbursement}</span></p>
+                            <p>Delivery of coin to buyer:<span>{item.progress.delivery}</span></p>
 
                             <h3>Pending Actions</h3>
                             <p>Accept Item</p>
@@ -104,8 +84,7 @@ export default function TransBuyer() {
             </div>
             
             <div className="pending-buttons">
-                <button className="accept">Accept</button>
-                <button className="decline">Decline</button>
+                <button className="paynow">Pay Now</button>
             </div>
         </div>
     )

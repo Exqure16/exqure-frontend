@@ -9,7 +9,8 @@
             "payToExqure": "Done",
             "shipment": "Done",
             "inspection": "Pending",
-            "disbursement": "---"
+            "disbursement": "---",
+            "delivery": "---"
         }
     },
     {
@@ -22,7 +23,9 @@
             "payToExqure": "Pending",
             "shipment": "Pending",
             "inspection": "Done",
-            "disbursement": "---"
+            "disbursement": "---",
+            "delivery": "---"
+
         }
     },
     {
@@ -32,10 +35,12 @@
         "status": "Done",
         "progress": {
             "agreement": "Pending",
-            "payToExqure": "Pending",
+            "payToExqure": "Done",
             "shipment": "Pending",
             "inspection": "Done",
-            "disbursement": "---"
+            "disbursement": "---",
+            "delivery": "---"
+
         }
     }
 ]

@@ -70,6 +70,14 @@
     background-color: #12773b;
 }
 
+.pending-buttons > .paynow {
+    padding: 12px 24px;
+    background-color: #239ED9;
+}
+.pending-buttons > .paynow:hover {
+    background-color: #1f8dc0;
+}
+
 .pending-buttons > .decline {
     background-color: #E03F1B;
 }

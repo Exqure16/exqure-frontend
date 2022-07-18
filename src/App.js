@@ -2,12 +2,15 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './component/Header/Header';
+//import Header from './component/Header/Header';
+import LoggedIn from './component/Header/LoggedIn';
+import LoggedInResponsive from './component/Header/LoggedInResponsive';
 import Comingsoon from './component/Comingsoon/Comingsoon';
 
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
 import TransBuyer from './component/Transactions/MyTransaction_Buyer';
+import TransBuyerCrypto from './component/Transactions/MyTransaction_Buyer-Crypto';
 import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
@@ -19,7 +22,8 @@ function App() {
   return (
     <div>
       {/* <Comingsoon /> */}
-      <Header />
+      {/*<Header />*/}
+      <LoggedInResponsive />
       <Routes>
         <Route path='exqure-frontend/' element={<Comingsoon />} />
         <Route path='exqure-frontend/login' element={<Login />} />
@@ -28,6 +32,7 @@ function App() {
         <Route path='exqure-frontend/reset' element={<ResetPassword />} />
         <Route path='exqure-frontend/signup' element={<Signup />} />
         <Route path='exqure-frontend/transactions' element={<TransBuyer />} />
+        <Route path='exqure-frontend/transactions-crypto' element={<TransBuyerCrypto />} />
       </Routes>
       <Footer />
     </div>

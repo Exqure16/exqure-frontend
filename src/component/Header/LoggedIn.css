@@ -1,0 +1,149 @@
+@font-face {
+    font-family: Futura PT;
+    src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Futura PT, sans-serif;
+}
+
+.resize {
+    width: 100%;
+    height: 80px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-logo-container {
+    width: 20%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-logo {
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links > * {
+    margin: 0 48px;
+}
+
+#chevron {
+    position: relative;
+    margin-left: 6px;
+    cursor: pointer;
+    transition: all .5s;
+}
+#chevron:hover {
+    color: #4CAFE3;
+    top: 1px;
+}
+
+.nav-links > a {
+    text-decoration: none;
+    color: black;
+    margin: 6px;
+    padding: 5px;
+    font-size: 16px;
+    transition: all .5s;
+}
+
+.nav-links a:hover {
+    color: #4CAFE3;
+}
+
+.nav-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -7rem;
+}
+
+.nav-profile > button {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin: 0 9px;
+}
+
+#userpreview {
+    width: 46px; 
+    height: 46px;
+    display: flex;
+    background-color: #4CAFE3;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -4px;
+}
+
+#dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition: all 0.5s;
+}
+
+#drop-head {
+    margin-right: -3rem;
+}
+
+.nav-drop {
+    margin-right: -5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-drop > a {
+    position: relative;
+    top: 12px;
+}
+
+#dropdown > li {
+    list-style: none;
+}
+
+#dropdown > a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all .5s;
+}
+
+.nav-drop > a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#dropdown a:hover {
+    color: #4CAFE3;
+}
+
+.active {
+    height: 70px;
+}

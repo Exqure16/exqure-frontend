@@ -1,6 +1,7 @@
 import React from 'react';
 import Cards from './cards'
 import './HomePageStyles.css';
+import './HomePageStyles_Mobile.css';
 import SideKick from '../images/rafiki.png'
 import Crypto from '../images/crypto.svg'
 import Fashion from '../images/fashion.svg'
@@ -41,13 +42,15 @@ export default function HomePage() {
                     Exqure guarantees 100% security and protects users 
                     from scams in transactions with our escrow services.
                 </p>
-                <button>Get Started</button>
-                <button>
-                    <FontAwesomeIcon icon="fas fa-video"/>
-                    <span>
-                        Watch Video
-                    </span>
-                </button>
+                <div className="writeup-buttons">
+                    <button>Get Started</button>
+                    <button>
+                        <FontAwesomeIcon icon="fas fa-video"/>
+                        <span>
+                            Watch Video
+                        </span>
+                    </button>
+                </div>
             </div>
             <div className="writeup-image"><img alt="side-pic" src={SideKick} /></div>
         </section>
@@ -76,7 +79,7 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <div className="single-cardbody">
+            <div className="single-cardbody reflow">
                 <div className="text-container">
                     <p className="single-card-tag">Crypto Trade</p>
                     <h2 className="single-card-header">Trade your coins without fear of scammers</h2>
